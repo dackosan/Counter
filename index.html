@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>Counter</header>
+    <div class="content">
+      <p>Counter value:</p>
+      <h2 id="counter">0</h2>
+      <div class="simpleDiv">
+        <button id="minus" class="simpleBtn">-</button>
+        <button id="plus" class="simpleBtn">+</button>
+      </div>
+      <div class="tenDiv">
+        <button id="minusTen" class="tenBtn">-10</button>
+        <button id="plusTen" class="tenBtn">+10</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const counter = document.getElementById("counter");
+
+    const minusBtn = document.getElementById("minus");
+    const plusBtn = document.getElementById("plus");
+    const minusTenBtn = document.getElementById("minusTen");
+    const plusTenBtn = document.getElementById("plusTen");
+
+    let counterValue = 0;
+
+    function updateCounter() {
+      counter.textContent = counterValue;
+    }
+
+    minusBtn.addEventListener("click", () => {
+      counterValue--;
+      updateCounter();
+    });
+
+    plusBtn.addEventListener("click", () => {
+      counterValue++;
+      updateCounter();
+    });
+
+    minusTenBtn.addEventListener("click", () => {
+      counterValue -= 10;
+      updateCounter();
+    });
+
+    plusTenBtn.addEventListener("click", () => {
+      counterValue += 10;
+      updateCounter();
+    });
+  </script>
+</html>
